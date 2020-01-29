@@ -21,7 +21,7 @@ class Concentration {
             cards.append(card)
         }
         
-        //TODO: Shuffle the cards
+        cards.shuffle()
     }
     
     //MARK: Methods

@@ -2,7 +2,7 @@
 //  Card.swift
 //  Concentration
 //
-//  Created by Diogo, Mariana 28/01/2020.
+//  Created by Diogo, Mariana.
 //  Copyright © 2020 Luna. All rights reserved.
 //
 
