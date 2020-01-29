@@ -11,21 +11,22 @@ import UIKit
 class ViewController: UIViewController {
 
     //MARK: Properties
+    
     var numberOfPairsOfCards: Int {
         return (cardButtons.count + 1)/2
     }
     
-    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1)/2)
-    var flipCount = 0 {
+    private(set) var flipCount = 0 {
         didSet {
             flipCountLabel.text = "Flips: \(flipCount)"
         }
     }
-    var emojiChoices = ["🎃", "👻", "👽", "🕷", "🦇", "🍭", "🍬", "😱", "🍫", "🧙‍♀️"]
-    var emojiCards = [Int:String]()
+    private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+    private var emojiChoices = ["🎃", "👻", "👽", "🕷", "🦇", "🍭", "🍬", "😱", "🍫", "🧙‍♀️"]
+    private var emojiCards = [Int:String]()
     
-    @IBOutlet weak var flipCountLabel: UILabel!
-    @IBOutlet var cardButtons: [UIButton]!
+    @IBOutlet private weak var flipCountLabel: UILabel!
+    @IBOutlet private var cardButtons: [UIButton]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +60,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func emoji(for card: Card) -> String {
+    private func emoji(for card: Card) -> String {
         if  emojiCards[card.identifier] == nil, emojiChoices.count > 0 {
             let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
             emojiCards[card.identifier] = emojiChoices.remove(at: randomIndex)
