@@ -217,6 +217,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OqC-Zb-I2Y" secondAttribute="trailing" constant="20" id="1Tv-41-5nP"/>
                             <constraint firstItem="OqC-Zb-I2Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="1dJ-D4-X7I"/>
+                            <constraint firstItem="rfG-IS-MY6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OqC-Zb-I2Y" secondAttribute="bottom" constant="8" symbolic="YES" id="AaG-ub-Uq0"/>
                             <constraint firstItem="OqC-Zb-I2Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hd0-0A-QCY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rfG-IS-MY6" secondAttribute="bottom" id="rMZ-2X-fe9"/>
                             <constraint firstItem="rfG-IS-MY6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xeb-kh-0Qc"/>
