@@ -12,7 +12,26 @@ class Concentration {
     
     //MARK: Properties
     var cards = [Card]()
-    var indexOfOneCardFacedUp : Int?
+    var indexOfOneCardFacedUp: Int? {
+        get {
+            var foundIndex: Int?
+            for index in cards.indices {
+                if cards[index].isFacedUp {
+                    if foundIndex == nil {
+                        foundIndex = index
+                    } else {
+                        return nil
+                    }
+                }
+            }
+            return foundIndex
+        }
+        set {
+            for index in cards.indices {
+                cards[index].isFacedUp = (index == newValue)
+            }
+        }
+    }
     
     init(numberOfPairsOfCards: Int) {
         for _ in 0..<numberOfPairsOfCards {
@@ -34,13 +53,8 @@ class Concentration {
                     cards[index].isMatched = true
                 }
                 cards[index].isFacedUp = true
-                indexOfOneCardFacedUp = nil
             } else {
                 //Either no cards or 2 cards are face up
-                for flipDownIndex in cards.indices {
-                    cards[flipDownIndex].isFacedUp = false
-                }
-                cards[index].isFacedUp = true
                 indexOfOneCardFacedUp = index
             }
             
